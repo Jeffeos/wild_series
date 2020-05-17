@@ -1,0 +1,43 @@
+// customize some Bootstrap variables
+$baseBlack: #000000;
+$baseGold: #CFB53B;
+$baseBeige: #FEFEE2;
+$baseRed: #B30000;
+
+$theme-colors: (
+        "baseBlack": $baseBlack,
+        "baseGold": $baseGold,
+        "baseBeige": $baseBeige,
+        "baseRed": $baseRed
+);
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: $baseBlack;
+}
+
+.navbar-no-border {
+
+}
+
+.navbar-container {
+  border: 1px solid $baseGold;
+  display: flex;
+  justify-content: center;
+  margin: 5px 5px 5px 5px;
+}
+
+.navbar {
+  width: 99%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 5px 5px 5px 5px;
+}
+
+.concept-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
