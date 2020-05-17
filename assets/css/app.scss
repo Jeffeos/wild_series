@@ -18,6 +18,8 @@ body {
   background-color: $baseBlack;
 }
 
+
+// NAVBAR STYLING
 .navbar-no-border {
 
 }
@@ -40,4 +42,9 @@ body {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+// TITLES STYLING
+h1 {
+  color: $baseGold;
 }
