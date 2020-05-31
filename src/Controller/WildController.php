@@ -2,10 +2,11 @@
 // src/Controller/WildController.php
 namespace App\Controller;
 
+use App\Repository\ProgramRepository;
+use App\Repository\EpisodeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\ProgramRepository;
 use App\Entity\Season;
 use App\Entity\Program;
 use App\Entity\Category;
@@ -109,6 +110,7 @@ class WildController extends AbstractController
 
     /**
      * Getting episodes based on the season selected
+     *
      * @Route("/season/{seasonId}", name="show_season")
      * @param integer $seasonId
      * @return Response
@@ -126,6 +128,25 @@ class WildController extends AbstractController
             'program'=> $program,
             'season' => $season,
             'episodes' => $episodes
+        ]);
+    }
+
+    /**
+     * Getting episode info from episode number
+     *
+     * @Route("/episode/{id}", name="episode")
+     * @param Episode $episode
+     * @return Response
+     */
+    public function showEpisodes(Episode $episode) :Response
+    {
+        $season = $episode->getSeason();
+        $program = $season->getProgram();
+
+        return $this->render('wild/episode.html.twig', [
+            'episode' => $episode,
+            'season' => $season,
+            'program' => $program
         ]);
     }
 }
