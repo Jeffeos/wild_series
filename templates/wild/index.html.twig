@@ -2,12 +2,12 @@
 
 {% block title %}All programs{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
-            <p>{{ program.summary }}</p>
+            <p>{{ program.synopsis }}</p>
         </div>
     {% else %}
         Aucune série trouvée.

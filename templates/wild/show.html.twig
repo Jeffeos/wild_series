@@ -2,16 +2,26 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ slug }}{% endblock %}
 
-{% block body %}
+{% block content %}
 
     <div class="media">
-        <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
+        <img class="align-self-start mr-3 program-poster" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="media-body">
             <h1 class="mt-0">{{ program.title }}</h1>
-            <p>{{ program.summary }}</p>
+            <p>{{ program.synopsis }}</p>
             <p>Categorie : {{ program.category.name }}</p>
         </div>
     </div>
+
+    <h2>LISTE DES SAISONS</h2>
+    {% for season in seasons %}
+        <a href="{{ path('wild_show_season', {'seasonId': season.id}) }}">
+            <ul><h3>SAISON {{ season.number }}</h3></ul>
+                <li>Année {{ season.year }}</li>
+                <li>Description : {{ season.description }}</li>
+        </a>
+
+    {% endfor %}
 
     <a href="{{ path('wild_index') }}">
         Retour à l'accueil

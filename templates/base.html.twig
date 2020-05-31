@@ -10,7 +10,9 @@
     </head>
     <body>
         {% include '_navbar.html' %}
-        {% block body %}{% endblock %}
+        <div class="content-div">
+            {% block content %}{% endblock %}
+        </div>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
