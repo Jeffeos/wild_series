@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All categories and add a category{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        <button class="btn btn-baseRed" type="submit" name="btnSearch">Ajouter</button>
+    {{ form_end(form) }}
+
+    <h1>Toutes les catégories de programmes : </h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.id }}</th>
+                    <td>{{ category.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

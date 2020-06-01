@@ -11,6 +11,8 @@ use App\Entity\Season;
 use App\Entity\Program;
 use App\Entity\Category;
 use App\Entity\Episode;
+use App\Form\ProgramSearchType;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/wild", name="wild_")
@@ -21,22 +23,37 @@ class WildController extends AbstractController
      * Show all rows from Program's entity
      *
      * @Route("/", name="index")
-     * @return Response A reponse Instance
+     * @param Request $request
+     * @return Response A response Instance
      */
-    public function index() :Response
+    public function index(Request $request) :Response
     {
-        $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findAll();
-        if (!$programs) {
-            throw $this->createNotFoundException(
-            'No program found in program\'s table.'
-            );
+        // Create a form to retrieve Programs
+        $form = $this->createForm(ProgramSearchType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            $data = $form->getData();
+
+            $programs = $this->getDoctrine()
+                ->getRepository(Program::class)
+                ->findBy(['title' => ucwords($data['searchField'])]);
+        } else {
+            // retrieve all programs from all categories
+            $programs = $this->getDoctrine()
+                ->getRepository(Program::class)
+                ->findAll();
+            if (!$programs) {
+                throw $this->createNotFoundException(
+                    'No program found in program\'s table.'
+                );
+            }
         }
 
         return $this->render(
             'wild/index.html.twig', [
-                'programs' => $programs
+                'programs' => $programs,
+                'form' => $form->createView(),
             ]
         );
     }

@@ -86,6 +86,19 @@ li {
   list-style-type: none;
 }
 
+th {
+  color: $baseGold;
+}
+
+td {
+  color: $baseBeige;
+
+}
+
+table {
+  border-color: $baseGold;
+}
+
 .italics {
   font-style: italic;
 }
@@ -95,4 +108,9 @@ li {
 .program-poster {
   height: 300px;
   width: auto;
+}
+
+// CATEGORY/ADD
+.col-form-label {
+  color: $baseGold;
 }
