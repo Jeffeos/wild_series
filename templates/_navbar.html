@@ -12,6 +12,17 @@
                     <li class="nav-item active">
                         <a class="nav-link text-baseGold" href="{{ path('wild_index') }}">TVSHOWS <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-baseGold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administration
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('category_add' )}}">Category</a>
+                            <a class="dropdown-item" href="{{ path('program_index' )}}">Program</a>
+                            <a class="dropdown-item" href="{{ path('season_index' )}}">Season</a>
+                            <a class="dropdown-item" href="{{ path('episode_index' )}}">Episode</a>
+                        </div>
+                    </li>git
                     <li class="nav-item">
                         <a class="nav-link text-baseGold" href="#">SIGN UP</a>
                     </li>
