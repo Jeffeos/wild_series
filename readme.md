@@ -7,3 +7,5 @@ Lien Loom pour les corrections :
 - quête numéro 12 : https://www.loom.com/share/ca59800604ed416493818a24dcefc4ac
 - quête numéro 13 : https://www.loom.com/share/f0064d6771864f46b6cc73100820d278
 - quête numéro 14 : https://www.loom.com/share/6bf9ac8a376840e09eaa8e107ceeda61
+- quête numéro 15 : https://www.loom.com/share/42069bb4364f4d9f8ab91a9b851d32bd
+
