@@ -103,6 +103,18 @@ label {
   color: $baseGold;
 }
 
+.dropdown-menu {
+  background-color: $baseBlack;
+}
+
+.dropdown-item {
+  color: $baseGold;
+
+  &:hover {
+    background-color: $baseBeige;
+  }
+}
+
 .italics {
   font-style: italic;
 }
