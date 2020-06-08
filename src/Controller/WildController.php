@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ProgramRepository;
 use App\Repository\EpisodeRepository;
+use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,6 +29,7 @@ class WildController extends AbstractController
      */
     public function index(Request $request) :Response
     {
+
         // Create a form to retrieve Programs
         $form = $this->createForm(ProgramSearchType::class);
         $form->handleRequest($request);

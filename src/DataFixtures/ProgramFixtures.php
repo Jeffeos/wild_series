@@ -7,6 +7,7 @@ use App\Entity\Program;
 use Doctrine\Bundle\FixturesBundle\fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use App\Service\Slugify;
 
 class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -51,12 +52,15 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $i = 0;
+        $slugify = new Slugify();
         foreach (self::PROGRAMS as $title => $data)
         {
             $program = new Program();
             $program->setTitle($title);
             $program->setSynopsis($data['synopsis']);
             $program->setCountry($data['country']);
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             $manager->persist($program);
             $program->setCategory($this->getReference('categorie_0'));
             $this->addReference("program_" . $i, $program);
