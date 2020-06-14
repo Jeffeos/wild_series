@@ -10,4 +10,6 @@ Lien Loom pour les corrections :
 - quête numéro 15 : https://www.loom.com/share/42069bb4364f4d9f8ab91a9b851d32bd
 - quête numéro 16 : https://www.loom.com/share/0efb124c619a47b7ac869a70f15a6434
 - quête numéro 17 : https://www.loom.com/share/9a25e751b74546468779884bfc43fa42
+- quête numéro 18 : https://www.loom.com/share/8d60e54dae2048dab3ccb2bb6c4455d7
 - quête numéro 19 : https://www.loom.com/share/1d87c08d79484bffa056444a1365c0cf
+
