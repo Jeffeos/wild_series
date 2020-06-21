@@ -46,6 +46,7 @@ security:
         - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/logout$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/wild/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
         - { path: ^/episode/, roles: ROLE_SUBSCRIBER }
