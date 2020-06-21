@@ -1,0 +1,47 @@
+{# templates/wild/show.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ season.number }}{% endblock %}
+
+{% block content %}
+
+    <h2>Saison {{ season.number }} de {{ program.title }}</h2>
+
+    <h3>Episode {{ episode.number }} : {{ episode.title }}</h3>
+    <p>{{ episode.synopsis }}</p>
+
+    <h2>Ajouter un commentaires :</h2>
+    {% if is_granted('ROLE_SUBSCRIBER') %}
+        {{ include('wild/_formComment.html.twig') }}
+    {% endif %}
+
+    <h1>Commentaires :</h1>
+    {% if comments is empty %}
+        <p>Il n'y aucun commentaire pour l'instant, ajoutez le votre !</p>
+    {% endif %}
+    {% for comment in comments %}
+        <p>Note : {{ comment.rate }} | Commentaire : {{ comment.comment }}</p>
+        {% if is_granted('ROLE_SUBSCRIBER') and comment.author.id == user.id %}
+            {{ include('wild/_delete_comment.html.twig') }}
+        {% endif %}
+    {% endfor %}
+
+    {% if is_granted('ROLE_SUBSCRIBER') %}
+    {% else %}
+        <a href="{{ path('app_login') }}">Connectez-vous pour ajouter un commentaire !</a>
+    {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">edit</a>
+        {{ include('episode/_delete_form.html.twig') }}
+    {% endif %}
+
+    <div>
+        <a href="{{ path('wild_show_season', {'seasonId': season.id}) }}">Voir la saison {{ season.number }}</a>
+        <a href="{{ path('wild_show', {'slug': program.title|lower|replace({" ": "-"}) }) }}">Voir la série {{ program.title }}</a>
+
+        <a href="{{ path('wild_index') }}">
+            Retour à l'accueil
+        </a>
+    </div>
+
+{% endblock %}

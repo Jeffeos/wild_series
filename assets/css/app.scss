@@ -17,7 +17,11 @@ $theme-colors: (
 body {
   background-color: $baseBlack;
 }
-
+.content-div {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // NAVBAR STYLING
 .navbar-no-border {
@@ -44,7 +48,85 @@ body {
   object-fit: contain;
 }
 
+// HTML TAG STYLING
 // TITLES STYLING
 h1 {
+  color: $baseGold;
+}
+
+h2 {
+  color: $baseGold;
+  margin-top: 30px;
+}
+
+h3 {
+  color: $baseGold;
+}
+
+// OTHER TAGS STYLING
+p {
+  color: $baseBeige;
+}
+
+a {
+  color: $baseRed;
+
+  &:hover {
+    color: $baseBeige;
+  }
+}
+
+ul {
+  color: $baseGold;
+  list-style-type: none;
+}
+
+li {
+  color: $baseBeige;
+  list-style-type: none;
+}
+
+th {
+  color: $baseGold;
+}
+
+td {
+  color: $baseBeige;
+
+}
+
+table {
+  border-color: $baseGold;
+}
+
+label {
+  color: $baseGold;
+}
+
+.dropdown-menu {
+  background-color: $baseBlack;
+}
+
+.dropdown-item {
+  color: $baseGold;
+
+  &:hover {
+    background-color: $baseBeige;
+  }
+}
+
+.italics {
+  font-style: italic;
+}
+
+// WILD/SHOW/PROGRAM
+
+.program-poster {
+  height: 300px;
+  width: auto;
+}
+
+// CATEGORY/ADD
+.col-form-label {
   color: $baseGold;
 }

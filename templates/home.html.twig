@@ -1,7 +1,15 @@
 {% extends "base.html.twig" %}
 
-{% block body %}
+{% block content %}
     <div>
         <img class="concept-image" src="{{ asset('assets/img/wild_series_poster.png') }}" alt="A poster saying : all your favourite tv-shows in one place">
     </div>
+    <a href="{{ path('wild_show', { 'slug': "walking-dead" }) }}">
+        Testing show() method from WildController with a real program s slug.
+    </a>
+    <br>
+    <a href="{{ path('wild_index') }}">
+        Testing index() method from WildController to view all programs.
+    </a>
+
 {% endblock %}

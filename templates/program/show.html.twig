@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Program{% endblock %}
+
+{% block body %}
+    <h1>Program</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ program.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ program.title }}</td>
+            </tr>
+            <tr>
+                <th>Synopsis</th>
+                <td>{{ program.synopsis }}</td>
+            </tr>
+            <tr>
+                <th>Poster</th>
+                <td>{{ program.poster }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ program.country }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Acteur :</h1>
+    <ul>
+        {% for actor in program.actors %}
+            <li><a href="/actor/{{ actor.slug }}">{{ actor.name }}</a></li>
+        {% else %}
+            <li>Aucun acteur pour cette série</li>
+        {% endfor %}
+    </ul>
+
+    {% if is_granted(ROLE_ADMIN) %}
+        <a href="{{ path('program_edit', { 'id': program.id} ) }}">Éditer</a>
+    {%endif%}
+
+    <a href="{{ path('program_index') }}">back to list</a>
+
+    {{ include('program/_delete_form.html.twig') }}
+{% endblock %}

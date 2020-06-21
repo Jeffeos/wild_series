@@ -1,0 +1,23 @@
+{# templates/wild/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.0.name }}{% endblock %}
+
+{% block content %}
+
+    {% for program in programs %}
+        <div class="media">
+            <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
+            <div class="media-body">
+                <h1 class="mt-0">{{ program.title }}</h1>
+                <p>{{ program.summary }}</p>
+                <p>Categorie : {{ program.category.name }}</p>
+            </div>
+        </div>
+
+        <a href="{{ path('wild_index') }}">
+            Retour à l'accueil
+        </a>
+    {% endfor %}
+
+{% endblock %}

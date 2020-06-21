@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode{% endblock %}
+
+{% block body %}
+    <h1>Episode</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ episode.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ episode.title }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ episode.number }}</td>
+            </tr>
+            <tr>
+                <th>Synopsis</th>
+                <td>{{ episode.synopsis }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>Ajouter un commentaire :</h1>
+        {{ include('episode/_formComment.html.twig') }}
+    {% endif %}
+
+    <h1>Commentaires :</h1>
+    {% for comment in comments %}
+        <p>Note : {{ comment.rate }} | Commentaire : {{ comment.comment }}</p>
+        {% if is_granted('ROLE_SUBSCRIBER') %}
+            {{ include('episode/_delete_comment.html.twig') }}
+        {% endif %}
+    {% endfor %}
+        <a href="{{ path('episode_index') }}">back to list</a>
+
+    <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">edit</a>
+
+    {{ include('episode/_delete_form.html.twig') }}
+{% endblock %}
