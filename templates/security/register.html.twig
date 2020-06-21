@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Créer un compte{% endblock %}
 
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
@@ -16,6 +16,6 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Créer mon compte</button>
+        <button type="submit" class="btn btn-baseRed">Créer mon compte</button>
     {{ form_end(registrationForm) }}
 {% endblock %}

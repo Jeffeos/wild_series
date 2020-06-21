@@ -1,0 +1,9 @@
+{% extends "emailTemplate.html.twig" %}
+
+{% block body %}
+
+    <h1 style="color:#CFB53B;">{{ program.title }} vient d'être ajoutée au catalogue de Wild Series !</h1>
+
+    <a href="http://localhost:8000/program/{{ program.slug }}" style="color:#B30000;">Cliquez ici pour la découvrir !</a>
+
+{% endblock %}

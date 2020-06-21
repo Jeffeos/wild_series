@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}New Show!{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/f07cb4033a.js" crossorigin="anonymous"></script>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body style="background-color:#000000;">
+{% block body %}
+
+    <div class="content-div">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+{% endblock %}
+
+</html>

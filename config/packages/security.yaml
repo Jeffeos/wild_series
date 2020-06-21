@@ -49,6 +49,8 @@ security:
         - { path: ^/register$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/wild/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
+        - { path: ^/my-profile, roles: ROLE_USER }
+
         - { path: ^/episode/, roles: ROLE_SUBSCRIBER }
         - { path: ^/program, roles: ROLE_SUBSCRIBER }
         - { path: ^/episode$, roles: ROLE_SUBSCRIBER }
