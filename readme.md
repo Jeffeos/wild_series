@@ -13,3 +13,6 @@ Lien Loom pour les corrections :
 - quête numéro 18 : https://www.loom.com/share/8d60e54dae2048dab3ccb2bb6c4455d7
 - quête numéro 19 : https://www.loom.com/share/1d87c08d79484bffa056444a1365c0cf
 - quête numéro 20 : https://www.loom.com/share/0db5b7d6d5034b0f99870b05d230cd3e
+- quête numéro 21 : pas de vidéo
+- quête numéro 22 : à venir
+- quête numéro 23 : https://www.loom.com/share/1fb8dc1c37b346389338faba40851fe3

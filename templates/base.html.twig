@@ -14,9 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    {% for label, messages in app.flashes %}
+                    {% for category, messages in app.flashes %}
                         {% for message in messages %}
-                            <div class="alert alert-{{ label }}">
+                            <div class="alert alert-{{ category }}">
                                 {{ message }}
                             </div>
                         {% endfor %}

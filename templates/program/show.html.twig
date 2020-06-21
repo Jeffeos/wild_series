@@ -39,8 +39,8 @@
         {% endfor %}
     </ul>
 
-    {% if is_granted(ROLE_ADMIN) %}
-        <a href="{{ path('program_edit', { 'id': program.id} ) }}">Éditer</a>
+    {% if is_granted("ROLE_ADMIN") %}
+        <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
     {%endif%}
 
     <a href="{{ path('program_index') }}">back to list</a>
